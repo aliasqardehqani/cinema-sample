@@ -1,0 +1,23 @@
+<h1>detail</h1>
+<ul>
+    <li>{{ food.name }}</li>
+    <li>{{ food.price }}</li>
+    <li>{{ food.description }}</li>
+    <li>{{ food.rate }}</li>
+    <li>{{ food.type_food }}</li>
+</ul>
+
+<hr>
+{% for comment in food.comments.all %}
+    <div class="comment">
+        <div class="date">{{ comment.created_date }}</div>
+        <strong>{{ comment.author }}</strong>
+        <p>{{ comment.text|linebreaks }}</p>
+
+    <hr>
+    </div>
+{% empty %}
+    <p>No comments here yet</p>
+{% endfor %}
+
+<a class="btn btn-default" href="{% url 'foods:addComment' pk=food.id%}">Add comment</a>

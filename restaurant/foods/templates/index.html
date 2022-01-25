@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <style>
+            body {
+                background-color: antiquewhite;
+            }
+        </style>
+    </head>
+    <body>
+       <header>
+
+
+        <nav class="continetr">
+            <div class="logo">
+                <a style="font-weight: bold;">Food Shop</a>
+                <ul style="background-image: url(img/food1.jpg);
+                width: 500px;">
+                    <li><a href="" class="selected">Home</a></li>
+                    <li><a href="{% url 'foods:discount' %}">Day discount</a></li>
+                    <li><a href="{% url 'foods:contact' %}">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        </header>
+        <hr>
+
+        <ul>
+        <a style="font-size: larger" >food list</a>
+            {% for food in foods %}
+                <a  href="{% url 'foods:detail' food.id %}">
+                    <li>{{ food.name }}</li>
+                </a>
+            {% endfor %}
+        </ul>
+       <form action="{% url 'contact:logout' %}" method="POST">
+           {% csrf_token %}
+           <button type="submit">Logout</button>
+       </form>
+
+       <hr>
+        <h4>footer</h4>
+        <footer>
+            <ul class="continer"></ul>
+            <ul>
+                <li>
+                    <strong>Our Location</strong>
+                    <p>Iran, Mazandaran, Neka , raiesi5 street</p>
+                </li>
+                <li>
+                    <strong>Phone</strong>
+                    <p>+98 938 667 8858</p>
+                </li>
+                <li>
+                    <strong>Email</strong>
+                    <p>alierami98@gmail.com</p>
+                </li>
+            </ul>
+        </footer>
+    </body>
+</html>

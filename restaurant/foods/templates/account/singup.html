@@ -1,0 +1,35 @@
+{% block content %}
+  <h2>Sign up</h2>
+  <form method="post">
+    {% csrf_token %}
+    {% for field in form %}
+      <p>
+        <a style="
+            font-size: 14px;
+            margin-left: 10px;
+            color: blue;
+            border-color: red;">
+            {{ field.label_tag }}
+            <br>
+            {{ field }}
+        </a>
+
+
+        {% for error in field.errors %}
+            <p style="color: darkorange">{{ error }}</p>
+        {% endfor %}
+      </p>
+    {% endfor %}
+    <button type="submit">Sign up</button>
+  </form>
+{% endblock %}
+<hr>
+<hr>
+<hr>
+<!--
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_ul }}
+    <button type="submit">Sign up</button>
+</form>
+-->

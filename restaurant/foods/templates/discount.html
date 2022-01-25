@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount</title>
+</head>
+<body>
+    <header>
+        <nav class="continetr">
+            <div class="logo">
+                <a style="font-weight: bold;">Food Shop</a>
+                <ul style="background-image: url(img/food1.jpg);
+                width: 500px;">
+                    <li><a href="{% url 'foods:food_list' %}" class="selected">Home</a></li>
+                    <li><a href="{% url 'foods:discount' %}">Day discount</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        </header>
+    <hr>
+    <!--
+        یه دونه حلقه ایجاد کنم که هر غذا رو با 
+        name, price , type_food, photo, 
+        نمایش بده و تخفیف روزشو اعلام کنه
+
+    -->
+    <a style="font-size: larger" >Day Discount</a>
+    <ul>
+
+    </ul>
+        
+    <hr>
+    <footer>
+        <ul class="continer"></ul>
+        <ul>
+            <li>
+                <strong>Our Location</strong>
+                <p>Iran, Mazandaran, Neka , raiesi5 street</p>
+            </li>
+            <li>
+                <strong>Phone</strong>
+                <p>+98 938 667 8858</p>
+            </li>
+            <li>
+                <strong>Email</strong>
+                <p>alierami98@gmail.com</p>
+            </li>
+        </ul>
+    </footer>
+</body>
+</html>
